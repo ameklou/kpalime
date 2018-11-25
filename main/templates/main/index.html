@@ -1,0 +1,23 @@
+{% extends "main/base.html"%}
+{% block css %}
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+{% endblock css %}
+{% block content %}
+{% include "main/menu.html" %}
+<div id='map'></div>
+{% endblock content %}
+
+{% block script %}
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoib3Blbm1pbmQiLCJhIjoiY2ptMXNheWJvMmpmdTNwbDhkcXdjYm1mayJ9.gnZvWE6i2LBCKsHO_BAMuA';
+mapboxgl.accessToken = 'pk.eyJ1Ijoib3Blbm1pbmQiLCJhIjoiY2ptMXNheWJvMmpmdTNwbDhkcXdjYm1mayJ9.gnZvWE6i2LBCKsHO_BAMuA';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/openmind/cjo2m41eo52h82sqm4a97icrm',
+center: [0.633412, 6.897599],
+zoom: 14
+});
+</script>
+
+{% endblock script %}
